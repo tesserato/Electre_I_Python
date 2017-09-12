@@ -87,7 +87,8 @@ for row in range(len(data_dict)):
 
 G = nx.DiGraph()
 
-G.add_edge(1,2)
+# G.add_node(1,2)
+G.add_edge('1','2')
 
 nx.draw(G)
 plt.show()
