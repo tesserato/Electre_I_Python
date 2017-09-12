@@ -70,25 +70,21 @@ for pair in itertools.combinations(data_dict, 2):
 
 
 p = 1
-q = 0
+q = 0.4
+G = nx.DiGraph()
+for n in data_dict:
+    G.add_node(n)
 dominance_matrix = np.zeros((len(data_dict), len(data_dict)))
-for row in range(len(data_dict)):
-    for col in range(len(data_dict)):
-        if row == col:
-            dominance_matrix[row, col] = np.nan
-        elif concordance_matrix[row, col] >= p and discordance_matrix[row, col] <= q:
-            dominance_matrix[row, col] = 1
+for pair in itertools.permutations(data_dict, 2):
+    if concordance_matrix[pair[0], pair[1]] >= p and discordance_matrix[pair[0], pair[1]] <= q:
+        dominance_matrix[pair[0], pair[1]] = 1
+        G.add_edge(pair[0], pair[1])
 
 
 # print(data_dict,'\n')
 # print(concordance_matrix,'\n')
 # print(discordance_matrix,'\n')
-# print(dominance_matrix,'\n')
+print(dominance_matrix,'\n')
 
-G = nx.DiGraph()
-
-# G.add_node(1,2)
-G.add_edge('1','2')
-
-nx.draw(G)
+nx.draw(G, with_labels = True)
 plt.show()
