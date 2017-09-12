@@ -68,9 +68,10 @@ for pair in itertools.combinations(data_dict, 2):
     discordance_matrix[pair[0], pair[1]] = max(discordance_f_s)
     discordance_matrix[pair[1], pair[0]] = max(discordance_s_f)
 
-
+# SET P and Q
 p = 1
 q = 0.4
+
 G = nx.DiGraph()
 for n in data_dict:
     G.add_node(n)
@@ -81,9 +82,9 @@ for pair in itertools.permutations(data_dict, 2):
         G.add_edge(pair[0], pair[1])
 
 
-# print(data_dict,'\n')
-# print(concordance_matrix,'\n')
-# print(discordance_matrix,'\n')
+print(data_dict,'\n')
+print(concordance_matrix,'\n')
+print(discordance_matrix,'\n')
 print(dominance_matrix,'\n')
 
 nx.draw(G, with_labels = True)
