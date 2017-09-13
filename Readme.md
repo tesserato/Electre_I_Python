@@ -8,5 +8,5 @@
 
 - Example Graph:
 
-[](https://raw.githubusercontent.com/tesserato/Electre_I_Python/master/teste.png)
+![](https://raw.githubusercontent.com/tesserato/Electre_I_Python/master/teste.png)
 
