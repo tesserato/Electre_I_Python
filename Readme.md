@@ -6,5 +6,7 @@
 
 - P and Q parameters can be changed in the end of the code
 
+- Example Graph:
 
+[](https://raw.githubusercontent.com/tesserato/Electre_I_Python/master/teste.png)
 
